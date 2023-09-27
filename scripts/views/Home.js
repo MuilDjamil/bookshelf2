@@ -1,11 +1,12 @@
+import data from "../storage/data.js"
 import MainView from "./MainView.js";
 import bookListItemTemplate from "./templates/bookListItem.js"
 
 export default class extends MainView {
-  constructor(booklist) {
+  constructor() {
     super()
     this.setTitle("Home")
-    this.booklist = booklist
+    this.booklist = data
   }
 
   async render() {

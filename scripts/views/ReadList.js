@@ -1,11 +1,12 @@
+import data from "../storage/data.js"
 import MainView from "./MainView.js"
 import bookListItemTemplate from "./templates/bookListItem.js"
 
 export default class extends MainView {
-  constructor(booklist) {
+  constructor() {
     super()
     this.setTitle("Read List")
-    this.booklist = booklist.filter(book => book.isComplete)
+    this.booklist = data.filter(book => book.isComplete)
   }
 
   async render() {

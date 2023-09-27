@@ -1,4 +1,3 @@
-import data from "./storage/data.js"
 import Home from "./views/Home.js"
 import ReadList from "./views/ReadList.js"
 import BookView from "./views/BookView.js"
@@ -26,8 +25,8 @@ const router = async () => {
     { path: "/", view: Home },
     { path: "/read-list", view: ReadList },
     { path: "/books/:id", view: BookView },
+    { path: "/edit-book/:id", view: EditBook },
     { path: "/add-book", view: AddBook },
-    { path: "/edit-book", view: EditBook },
   ]
   
   const routeMatches = routes.map(route => {
@@ -46,7 +45,7 @@ const router = async () => {
     }
   }
 
-  const view = new match.route.view(data, getParams(match))
+  const view = new match.route.view(getParams(match))
   view.render()
 }
 

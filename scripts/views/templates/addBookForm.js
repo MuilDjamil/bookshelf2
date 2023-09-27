@@ -1,4 +1,5 @@
-import { overlayViewportTemplate, bookFormTemplate } from "./__global.js"
+import bookFormTemplate from "./global/bookForm.js"
+import overlayViewportTemplate from "./global/overlayViewport.js"
 
 const addBookFormTemplate = () => {
   const overlayViewport = overlayViewportTemplate()

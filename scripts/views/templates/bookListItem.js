@@ -1,16 +1,13 @@
 import { htmlToElement } from "./parser.js"
 import { selectBookEventHandler } from "../../events/index.js"
-import {
-  bookTagTemplate,
-  bookReviewStarTemplate,
-  bookReviewStarActiveTemplate
-} from "./__global.js"
+import { bookReviewStarTemplate, bookReviewStarActiveTemplate } from "./global/bookReviewStar.js"
+import bookTagTemplate from "./global/bookTag.js"
 
-const bookListItemTemplate = ({ id, imgCover, title, author, year, tags, reviewStar, isComplete }) => {
+const bookListItemTemplate = ({ id, imageUrl, title, author, year, tags, reviewStar, isComplete }) => {
   const bookItem = htmlToElement(`
     <article class="booklist__item" data-source="${id}">
       <div class="booklist__item-image">
-        <img src="${imgCover}" alt="${imgCover}">
+        <img src="${imageUrl}" alt="${imageUrl}">
       </div>
       <div class="booklist__item-info">
         <h2>${title}</h2>

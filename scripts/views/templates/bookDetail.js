@@ -1,10 +1,10 @@
 import { editBookEventHandler } from "../../events/index.js"
-import { bookReviewStarTemplate ,bookReviewStarActiveTemplate } from "./__global.js"
+import { bookReviewStarTemplate, bookReviewStarActiveTemplate } from "./global/bookReviewStar.js"
 import { htmlToElement } from "./parser.js"
 
-const bookDetailTemplate = ({ imgCover, title, author, year, description, reviewStar, isComplete }) => {
+const bookDetailTemplate = ({ id, imageUrl, title, author, year, description, reviewStar, isComplete }) => {
   const bookDetail = htmlToElement(`
-    <article class="book-detail" id="book-detail">       
+    <article class="book-detail" id="book-detail" data-source="${id}">       
       <nav class="book-detail__navigation">
         <a href="/" class="icon book-detail__back-icon" id="book-detail__back" data-link>
           <iconify-icon icon="ep:back" data-link></iconify-icon>
@@ -15,7 +15,7 @@ const bookDetailTemplate = ({ imgCover, title, author, year, description, review
       </nav>
       <div class="book-detail__content" id="book-content">
         <div class="book-content__image">
-          <img src="${imgCover}" alt="test">
+          <img src="${imageUrl}" alt="${imageUrl}">
         </div>
         <div class="book-content__info">
           <h2>${title}</h2>

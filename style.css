@@ -15,6 +15,7 @@ html {
   --PRIMARY-COLOR: #dea426;
   --TEXT-GRAY-COLOR: #9e9c95;
   --BLACK-COLOR: #1c1c1b;
+  --WHITE-COLOR: #fffcfc;
   --GRAY-COLOR: #eaebec;
 }
 
@@ -67,10 +68,12 @@ input {
 }
 
 textarea {
+  color: var(--BLACK-COLOR);
   font-family: inherit;
   font-size: 1.4em;
   resize: none;
   min-height: 7rem;
+  text-indent: 0;
 }
 
 button {
@@ -130,7 +133,7 @@ img {
 
 .overlay-viewport__container {
   animation: show-up .4s linear forwards;
-  background-color: #fff;
+  background-color: var(--WHITE-COLOR);
   max-width: 50rem;
   width: 100%;
   padding: 1.5em;
@@ -169,7 +172,7 @@ img {
   width: 100%;
   text-align: center;
   display: inline-block;
-  color: var(--GRAY-COLOR);
+  color: var(--WHITE-COLOR);
   text-transform: uppercase;
   padding: .5em;
   border-radius: .2em;
@@ -394,7 +397,7 @@ main {
   padding: .4em;
   width: 100%;
   outline: none;
-  border: .1em solid var(--TEXT-GRAY-COLOR);
+  border: .1em solid var(--GRAY-COLOR);
   border-radius: .2em;
 }
 

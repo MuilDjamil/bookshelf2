@@ -1,7 +1,7 @@
 const data = [
   {
     id: 1,
-    imgCover: "https://m.media-amazon.com/images/I/A11Akqz5F9L._AC_UF1000,1000_QL80_.jpg",
+    imageUrl: "https://m.media-amazon.com/images/I/A11Akqz5F9L._AC_UF1000,1000_QL80_.jpg",
     title: "Pinocchio",
     author: "D Gobs",
     year: 1998,
@@ -12,7 +12,7 @@ const data = [
   },
   {
     id: 2,
-    imgCover: "/assets/book-cover3.jpg",
+    imageUrl: "/assets/book-cover3.jpg",
     title: "Healing Mandalas",
     author: "Gandhi",
     year: 2002,
@@ -23,7 +23,7 @@ const data = [
   },
   {
     id: 3,
-    imgCover: "/assets/book-cover1.jpg",
+    imageUrl: "/assets/book-cover1.jpg",
     title: "DIA DEL LIBRO",
     author: "M Buletin",
     year: 1229,

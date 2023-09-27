@@ -1,13 +1,11 @@
-import { 
-  overlayViewportTemplate,
-  bookFormTemplate,
-  bookReviewStarTemplate
-} from "./__global.js"
 import { htmlToElement } from "./parser.js"
+import { bookReviewStarTemplate } from "./global/bookReviewStar.js"
+import overlayViewportTemplate from "./global/overlayViewport.js"
+import bookFormTemplate from "./global/bookForm.js"
 
-const editBookFormTemplate = () => {
+const editBookFormTemplate = (data) => {
   const overlayViewport = overlayViewportTemplate()
-  const bookForm = bookFormTemplate()
+  const bookForm = bookFormTemplate(data)
 
   overlayViewport.querySelector(".overlay-viewport__content").append(bookForm)
 
@@ -23,8 +21,8 @@ const editBookFormTemplate = () => {
 
   const markBookEdit = `
     <div class="book-review book-form__input">
-      <input type="checkbox" />
-      <label>Mark as Read</label>
+      <input type="checkbox" id="mark" name="mark" />
+      <label for="mark">Mark as Read</label>
     </div>
   `
 
