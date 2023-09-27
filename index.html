@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookshelf App</title>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="main-layout">
+    <header>
+      <div class="top-header">
+        <h1>Bookshelf</h1>
+        <div class="icon top-header__filter" id="tags-filter">
+          <iconify-icon icon="fluent:filter-16-filled"></iconify-icon>
+        </div>
+      </div>
+
+      <div class="search-bar">
+        <span class="search-bar__placeholder" id="search-placeholder">
+          <span class="icon search-bar__icon">
+            <iconify-icon icon="prime:search"></iconify-icon>
+          </span>
+          Search
+        </span>
+        <input type="text" class="search-bar__input">
+      </div>
+    </header>
+  
+    <main>  
+      <section class="booklist" id="booklist-element">
+      
+      </section>
+    
+      <section id="absolute-content">
+       
+      </section> 
+    </main>
+
+    <nav class="navigation" id="navigation-element">
+      
+    </nav>
+  </div> 
+   
+  <script src="/scripts/index.js" type="module"></script>
+</body>
+</html>
