@@ -1,4 +1,5 @@
-import { editBookEventHandler } from "../../events/index.js"
+import { editButtonEventHandler } from "../../events/editBookEvent.js"
+import deleteBookEventHandler from "../../events/deleteBookEvent.js"
 import { bookReviewStarTemplate, bookReviewStarActiveTemplate } from "./global/bookReviewStar.js"
 import { htmlToElement } from "./parser.js"
 
@@ -27,10 +28,10 @@ const bookDetailTemplate = ({ id, imageUrl, title, author, year, description, re
         </div>
         <div class="button-list">
           <div class="button-list__item">
-            <button id="edit-button">Edit</button>
+            <button id="delete-button">Delete</button>
           </div>
           <div class="button-list__item">
-            <button>Read</button>
+            <button id="edit-button">Edit</button>
           </div>
         </div>
       </div>
@@ -45,13 +46,14 @@ const bookDetailTemplate = ({ id, imageUrl, title, author, year, description, re
 
   for (let i = 1; i <= 5; i++) {
     if (i <= reviewStar) {
-      bookDetail.querySelector(".book-review").innerHTML += bookReviewStarActiveTemplate()
+      bookDetail.querySelector(".book-review").appendChild(bookReviewStarActiveTemplate())
     } else {
-      bookDetail.querySelector(".book-review").innerHTML += bookReviewStarTemplate()
+      bookDetail.querySelector(".book-review").appendChild(bookReviewStarTemplate())
     }
   }
 
-  bookDetail.querySelector("#edit-button").addEventListener("click", editBookEventHandler)
+  bookDetail.querySelector("#edit-button").addEventListener("click", editButtonEventHandler)
+  bookDetail.querySelector("#delete-button").addEventListener("click", deleteBookEventHandler)
 
   return bookDetail
 }

@@ -118,6 +118,10 @@ img {
   border-radius: 50%;
 }
 
+.required-tooltip {
+  color: hsl(0, 100%, 58%);
+}
+
 .overlay-viewport {
   display: flex;
   justify-content: center;
@@ -226,6 +230,10 @@ img {
   position: relative;
 }
 
+.search-bar__placeholder.hide {
+  display: none;
+}
+
 .search-bar__placeholder {
   pointer-events: none;
   position: absolute;
@@ -248,7 +256,7 @@ img {
   width: 100%;
   background-color: var(--GRAY-COLOR);
   border-radius: .3em;
-  padding: 1.2em;
+  padding: .6em;
   outline: none;
   border: none;
 }
@@ -259,6 +267,11 @@ main {
 }
 
 /* || Booklist */
+.book-empty {
+  margin-top: 1em;
+  align-self: center;
+}
+
 .booklist {
   display: flex;
   flex-direction: column;
@@ -442,6 +455,8 @@ main {
 }
 
 .navigation__list {
+  max-width: 576px;
+  margin-inline: auto;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -477,7 +492,9 @@ main {
   .booklist__item-info {
     flex-basis: 75%;
   }
+}
 
+@media screen and (min-width: 1280px) {
   /* || Navigation */
   .navigation {
     position: absolute;
@@ -509,6 +526,7 @@ main {
     gap: .7em;
   }
 }
+
 
 @keyframes slide-view {
   0% {

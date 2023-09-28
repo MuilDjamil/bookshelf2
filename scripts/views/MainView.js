@@ -3,6 +3,8 @@ import navigationListTemplate from "./templates/navigationList.js"
 export default class {
   constructor() {
     this.renderNavigation()
+
+    document.getElementById("search-input").value = ""
   }
   
   setTitle(title) {

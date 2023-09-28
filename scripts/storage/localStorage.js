@@ -1,7 +1,5 @@
 const STORAGE_KEY = 'Bookshelf-Storage';
 
-let memory = []
-
 const checkStorage = () => {
   if (typeof Storage === undefined) {
     alert("Your browser doesn't support localStorage. Please change your browser")
@@ -13,15 +11,11 @@ const checkStorage = () => {
 
 const loadStorageData = () => {
   let storageData = localStorage.getItem(STORAGE_KEY)
-  storageData = JSON.parse(storageData)
-
-  if (storageData) {
-    memory = storageData
-  }
+  return JSON.parse(storageData) || []
 }
 
-const saveStorageData = () => {
-  const storageData = JSON.stringify(memory)
+const saveStorageData = (data) => {
+  const storageData = JSON.stringify(data)
   localStorage.setItem(STORAGE_KEY, storageData)
 }
 

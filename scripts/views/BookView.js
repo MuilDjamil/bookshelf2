@@ -1,10 +1,10 @@
-import data from "../storage/data.js"
+import { loadStorageData } from "../storage/localStorage.js"
 import bookDetailTemplate from "./templates/bookDetail.js"
 
 export default class {
   constructor(params) {
     document.title = `Book Detail - ${params.id}`
-    this.data = data.find(d => d.id == params.id)
+    this.data = loadStorageData().find(data => data.id == params.id)
   }
 
   async render() {

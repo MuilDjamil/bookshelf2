@@ -1,10 +1,10 @@
-import data from "../storage/data.js";
+import { loadStorageData } from "../storage/localStorage.js";
 import editBookFormTemplate from "./templates/editBookForm.js";
 
 export default class {
   constructor(params) {
     document.title = `Edit Book`
-    this.data = data.find(d => d.id == params.id)
+    this.data = loadStorageData().find(data => data.id == params.id)
   }
 
   async render() {

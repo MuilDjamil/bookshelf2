@@ -1,5 +1,5 @@
 import { htmlToElement } from "./parser.js"
-import { selectBookEventHandler } from "../../events/index.js"
+import selectBookEventHandler from "../../events/selectBookEvent.js"
 import { bookReviewStarTemplate, bookReviewStarActiveTemplate } from "./global/bookReviewStar.js"
 import bookTagTemplate from "./global/bookTag.js"
 
@@ -30,9 +30,9 @@ const bookListItemTemplate = ({ id, imageUrl, title, author, year, tags, reviewS
 
   for (let i = 1; i <= 5; i++) {
     if (i <= reviewStar) {
-      bookItem.querySelector(".book-review").innerHTML += bookReviewStarActiveTemplate()
+      bookItem.querySelector(".book-review").appendChild(bookReviewStarActiveTemplate())
     } else {
-      bookItem.querySelector(".book-review").innerHTML += bookReviewStarTemplate()
+      bookItem.querySelector(".book-review").appendChild(bookReviewStarTemplate())
     }
   }
 
